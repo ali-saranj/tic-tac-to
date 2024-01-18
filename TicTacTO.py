@@ -18,7 +18,7 @@ class TicTacTO():
     def showMap(self):
         print(self.__createMap())
 
-    def setOandX(self, value: str, character: chr):# character = o or x
+    def setOandX(self, value: str, character: chr):  # character = o or x
         if value == '1':
             self.arrGameMap[0][0] = character
         if value == '2':
@@ -49,10 +49,10 @@ class TicTacTO():
             return self.arrGameMap[0][0]
         elif self.arrGameMap[0][2] == self.arrGameMap[1][1] == self.arrGameMap[2][0]:
             return self.arrGameMap[0][2]
-        elif self.arrGameMap[0][0] == self.arrGameMap[1][0] == self.arrGameMap[2][2]:
+        elif self.arrGameMap[0][0] == self.arrGameMap[1][0] == self.arrGameMap[2][0]:
             return self.arrGameMap[0][0]
         elif self.arrGameMap[0][1] == self.arrGameMap[1][1] == self.arrGameMap[2][1]:
             return self.arrGameMap[0][1]
         elif self.arrGameMap[0][2] == self.arrGameMap[1][2] == self.arrGameMap[2][2]:
             return self.arrGameMap[0][2]
-
+        return "z"

@@ -17,9 +17,15 @@ if server_conection:
 
     while True:
         index = server_conection.recv(1024).decode('utf-8')
-        ticTacTO.setOandX(index,"0")
+        ticTacTO.setOandX(index,"O")
+        if ticTacTO.winner() != "z":
+            print(f"{ticTacTO.winner()} is winner")
+            break
         ticTacTO.showMap()
         index = input(": ")
         ticTacTO.setOandX(index, "x")
         ticTacTO.showMap()
         server_conection.send(index.encode('utf-8'))
+        if ticTacTO.winner() != "z":
+            print(f"{ticTacTO.winner()} is winner")
+            break

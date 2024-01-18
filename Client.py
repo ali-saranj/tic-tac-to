@@ -17,9 +17,15 @@ if data_receive:
 
     while True:
         index = input(":")
-        ticTacTO.setOandX(index, "0")
+        ticTacTO.setOandX(index, "O")
         ticTacTO.showMap()
         socket_client.send(index.encode('utf-8'))
+        if ticTacTO.winner() != "z":
+            print(f"{ticTacTO.winner()} is winner")
+            break
         index = socket_client.recv(1024).decode('utf-8')
         ticTacTO.setOandX(index, "x")
+        if ticTacTO.winner() != "z":
+            print(f"{ticTacTO.winner()} is winner")
+            break
         ticTacTO.showMap()
